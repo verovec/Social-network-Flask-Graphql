@@ -12,3 +12,10 @@ Neither javascript nor css just html and python
 - Add posts
 - Like posts
 - Management of rights for guests without accounts, for users, as well as for owners
+
+
+## • Require
+- Python 2.7 or more recent version
+- py2neo
+- Setup Neo4j database
+- Web server
