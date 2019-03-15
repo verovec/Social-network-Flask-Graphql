@@ -1,0 +1,28 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+	{% include 'header.html' %}
+	
+	{% if create == 'none' %}
+		<p>Account not registered, username or email already used</p>
+	{% endif %}
+
+	{% if samePassword %}
+		<p>Error : Passwords are differents</p>
+	{% endif %}
+
+	<form action="/register/" method="POST">
+		<input type="text" name="username" placeholder="Username" required>
+		<input type="mail" name="mail" placeholder="Mail address" required>
+		<input type="password" name="password" placeholder="Password" required>
+		<input type="password" name="confirmPassword" placeholder="Confirm password" required>
+		<input type="text" name="firstName" placeholder="First Name" required>
+		<input type="text" name="lastName" placeholder="Last Name" required>
+		<input type="date" name="born" placeholder="Birth Date" required>
+		<input type="submit" value="Register">
+	</form>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+	{% include 'header.html' %}
+
+
+	{% if connected == 'none' %}
+		<p>Wrong email/username or password</p>
+	{% endif %}
+	
+	<form action="/login/" method="POST">
+		<input type="text" name="username" placeholder="Username or Email" required>
+		<input type="password" name="password" placeholder="Password" required>
+		<input type="submit" value="Login">
+	</form>
+{% endblock %}
+

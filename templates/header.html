@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+
+	{% if user %}
+		<p>Connected as {{user}}</p>
+	{% endif %}
+
+	<input type="button" value="Accueil" onclick="window.location='/'">
+	{% if not user %}
+		<input type="button" value="Register" onclick="window.location='/register/'">
+		<input type="button" value="Login" onclick="window.location='/login/'">
+	{% else %}
+		<input type="button" value="Logout" onclick="window.location='/logout/'">
+		<input type="button" value="Home" onclick="window.location='/home/{{user}}'">
+		<input type="button" value="News" onclick="window.location='/home/news/{{user}}'">
+	{% endif %}
+
+
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% endblock %}

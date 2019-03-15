@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+
+	{% include 'header.html' %}
+
+	<br><br>
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		{% if displayUsers %}
+			{% for elem in displayUsers %}
+				<div style="border:solid 3px;">
+					<p style="text-align: center;"><a href="/home/{{elem.sugUser.username}}">{{elem.sugUser.firstName}} {{elem.sugUser.lastName}}  ({{elem.sugUser.username}})</a> <input type="button" value="Follow him" onclick="window.location='/follow/{{user}}/{{elem.sugUser.username}}'"></p>
+				</div>
+				<br>
+			{% endfor %}
+		{% endif %}
+	</div>
+	<div class="col-md-9 col-sm-12 col-xs-12">
+		{% for elem in displayPosts %}
+			<div style="border:solid 3px;">
+				<p style="text-align: center;"><b>{{elem.u.firstName}} {{elem.u.lastName}}  ({{elem.u.username}})</b></p>
+				<p style="text-align: center;">{{elem.p.date}}</p>
+				<p><b>Title : </b>{{elem.p.title}}</p>
+				<p><b>Content : </b>{{elem.p.content}}</p>
+				<input type="button" value="Like" onclick="window.location='/like/{{user}}/{{elem.p.unique}}'">
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}

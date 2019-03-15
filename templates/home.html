@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+	{% include 'header.html' %}
+
+	{% if type == 'owner' %}
+		<input type="button" value="Add Post" onclick="window.location='/addPost/'">
+		<p>Your profil {{ username }}</p>
+	{% elif type == 'visitor' or type == 'guest' %}
+		<p>{{ type }}</p>
+		<p>Welcome to {{ username }}'s profil !</p>
+	{% endif %}
+
+
+	<br><br><br>
+
+
+	{% for post in posts %}
+		<div class="col-md-6 col-sm-12 col-xs-12" style='border:solid 3px;'>
+			<p>date : {{post.post.date}}</p>
+			<p>title : {{post.post.title}}</p>
+			<p>content : {{post.post.content}}</p>
+		</div>
+	<br><br>
+	{% endfor %}
+
+{% endblock %}
+
