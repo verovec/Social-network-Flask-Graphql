@@ -6,6 +6,9 @@ Neither javascript nor css just html and python
 ## • Feature
 - Register
 - Login
+- Home page for each users
+- Newsfeed
 - Follow users
 - Add posts
 - Like posts
+- Management of rights for guests without accounts, for users, as well as for owners
