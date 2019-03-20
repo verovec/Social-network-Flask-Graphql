@@ -10,7 +10,7 @@ from datetime import datetime
 class DB():
 	def db(self):
 		try:
-			graph = Graph('http://USERNAME:PASSWORD@IP ADDRESS:PORT')
+			graph = Graph('http://USERNAME:PASSWORD@IPADDRESS:PORT')
 			return graph
 
 		except Exception as e:
