@@ -11,7 +11,7 @@ Neither javascript nor css just html and python
 - Follow users
 - Add posts
 - Like posts
-- Management of rights for guests without accounts, for users, as well as for owners
+- Manage rights for guests without an account, for users, and for owners
 
 
 ## • Require
