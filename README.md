@@ -17,5 +17,5 @@ Neither javascript nor css just html (with Jinja) and python
 ## • Require
 - Python 2.7 or more recent version
 - py2neo
-- Setup Neo4j database
 - Web server
+- Setup Neo4j database
